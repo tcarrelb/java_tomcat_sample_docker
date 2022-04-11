@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         stage('Build Application') {
-            withMaven(maven: 'mvn') {
+            steps withMaven(maven: 'mvn') {
                 sh 'mvn -f pom.xml clean package'
             }
             post {
